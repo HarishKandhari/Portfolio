@@ -1,7 +1,11 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  content: [
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -9,16 +13,16 @@ const config: Config = {
         body: ["var(--font-inter)", "sans-serif"],
       },
       colors: {
-        bg: "#070711",
-        surface: "rgba(255,255,255,0.03)",
+        bg: "#07040e",
+        surface: "rgba(139,92,246,0.05)",
         indigo: {
-          DEFAULT: "#6366f1",
-          light: "#818cf8",
-          dim: "rgba(99,102,241,0.12)",
+          DEFAULT: "#8b5cf6",
+          light: "#c4b5fd",
+          dim: "rgba(139,92,246,0.12)",
         },
-        cyan: { DEFAULT: "#22d3ee", light: "#67e8f9" },
-        violet: "#a855f7",
-        border: "rgba(255,255,255,0.07)",
+        cyan: { DEFAULT: "#f59e0b", light: "#fcd34d" },
+        violet: "#ec4899",
+        border: "rgba(139,92,246,0.1)",
         text: { DEFAULT: "#f1f5f9", muted: "#94a3b8", dim: "#4b5563" },
       },
       animation: {
@@ -37,8 +41,8 @@ const config: Config = {
           "66%": { transform: "translateY(8px) rotate(-4deg)" },
         },
         pulseGlow: {
-          "0%,100%": { boxShadow: "0 0 6px rgba(99,102,241,0.7)" },
-          "50%": { boxShadow: "0 0 20px rgba(99,102,241,1), 0 0 40px rgba(34,211,238,0.4)" },
+          "0%,100%": { boxShadow: "0 0 6px rgba(139,92,246,0.7)" },
+          "50%": { boxShadow: "0 0 22px rgba(139,92,246,1), 0 0 44px rgba(245,158,11,0.45)" },
         },
       },
     },

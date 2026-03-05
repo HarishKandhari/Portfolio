@@ -16,7 +16,7 @@ export default function Projects() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
-          <p className="text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Personal Work</p>
+          <p className="font-heading text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Personal Work</p>
           <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight">Featured Projects</h2>
           <motion.div
             initial={{ width: 0 }}
@@ -35,7 +35,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6, borderColor: "rgba(99,102,241,0.35)", boxShadow: "0 16px 48px rgba(99,102,241,0.12)" }}
+              whileHover={{ y: -6, borderColor: "rgba(139,92,246,0.35)", boxShadow: "0 16px 48px rgba(139,92,246,0.12)" }}
               className="group relative bg-surface border border-border rounded-2xl p-7 overflow-hidden backdrop-blur-sm transition-all"
             >
               {/* Top gradient accent */}
@@ -54,7 +54,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-cyan-light text-xs font-semibold px-2.5 py-1 rounded-md border border-cyan/20 bg-cyan/[0.07] tracking-wide"
+                      className="font-heading text-cyan-light text-xs font-semibold px-2.5 py-1 rounded-md border border-cyan/20 bg-cyan/[0.07] tracking-wide"
                     >
                       {tag}
                     </span>

@@ -22,7 +22,7 @@ export default function Education() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
-          <p className="text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Background</p>
+          <p className="font-heading text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Background</p>
           <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight">Education &amp; Certifications</h2>
           <motion.div
             initial={{ width: 0 }}
@@ -36,7 +36,7 @@ export default function Education() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Education */}
           <div>
-            <p className="text-text-dim text-xs font-bold tracking-[0.12em] uppercase mb-5">Education</p>
+            <p className="font-heading text-text-dim text-xs font-bold tracking-[0.12em] uppercase mb-5">Education</p>
             <motion.div
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
               initial="hidden"
@@ -48,12 +48,12 @@ export default function Education() {
                 <motion.div
                   key={edu.school}
                   variants={item}
-                  whileHover={{ borderColor: "rgba(99,102,241,0.3)", y: -2 }}
+                  whileHover={{ borderColor: "rgba(139,92,246,0.3)", y: -2 }}
                   className="bg-surface border border-border rounded-2xl p-5 backdrop-blur-sm transition-all"
                 >
                   <h3 className="font-heading font-bold text-base mb-1">{edu.school}</h3>
                   <p className="text-text-muted text-sm mb-2">{edu.degree}</p>
-                  <p className="text-indigo text-sm font-semibold">CGPA: {edu.gpa}</p>
+                  <p className="font-heading text-indigo text-sm font-semibold">CGPA: {edu.gpa}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -61,7 +61,7 @@ export default function Education() {
 
           {/* Certifications */}
           <div>
-            <p className="text-text-dim text-xs font-bold tracking-[0.12em] uppercase mb-5">Certifications</p>
+            <p className="font-heading text-text-dim text-xs font-bold tracking-[0.12em] uppercase mb-5">Certifications</p>
             <motion.div
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
               initial="hidden"
@@ -73,15 +73,15 @@ export default function Education() {
                 <motion.div
                   key={cert.name}
                   variants={item}
-                  whileHover={{ borderColor: "rgba(34,211,238,0.28)", y: -2 }}
+                  whileHover={{ borderColor: "rgba(245,158,11,0.28)", y: -2 }}
                   className="bg-surface border border-border rounded-2xl p-5 flex items-center gap-4 backdrop-blur-sm transition-all"
                 >
                   <div className="w-11 h-11 flex items-center justify-center text-xl bg-cyan/[0.08] border border-cyan/15 rounded-xl shrink-0">
                     {cert.icon}
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">{cert.name}</p>
-                    <p className="text-text-dim text-xs mt-0.5">{cert.org}</p>
+                    <p className="font-heading font-semibold text-sm">{cert.name}</p>
+                    <p className="font-heading text-text-dim text-xs mt-0.5">{cert.org}</p>
                   </div>
                 </motion.div>
               ))}

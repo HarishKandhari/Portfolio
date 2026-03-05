@@ -39,7 +39,7 @@ function MarqueeRow({ items, reverse }: { items: string[]; reverse?: boolean }) 
         {doubled.map((item, i) => (
           <span
             key={i}
-            className="whitespace-nowrap text-sm font-medium px-4 py-2 rounded-full border border-border bg-surface text-text-muted hover:border-indigo/40 hover:text-indigo-light hover:bg-indigo/10 transition-all cursor-default"
+            className="whitespace-nowrap font-heading text-sm font-medium px-4 py-2 rounded-full border border-border bg-surface text-text-muted hover:border-indigo/40 hover:text-indigo-light hover:bg-indigo/10 transition-all cursor-default"
           >
             {item}
           </span>
@@ -63,7 +63,7 @@ export default function Skills() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
-          <p className="text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Technical Arsenal</p>
+          <p className="font-heading text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Technical Arsenal</p>
           <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight">
             Skills &amp; Expertise
           </h2>
@@ -87,7 +87,7 @@ export default function Skills() {
           {CATEGORIES.map((c) => (
             <span
               key={c.label}
-              className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-indigo/10 border border-indigo/20 text-indigo-light"
+              className="inline-flex items-center gap-2 font-heading text-xs font-semibold px-3 py-1.5 rounded-lg bg-indigo/10 border border-indigo/20 text-indigo-light"
             >
               <span>{c.icon}</span>
               {c.label}
@@ -103,7 +103,6 @@ export default function Skills() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="space-y-3 -mx-6"
         >
-          {/* Edge fades */}
           <div className="relative">
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />

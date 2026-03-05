@@ -39,7 +39,7 @@ export default function Nav() {
       {/* Scroll progress */}
       <motion.div
         style={{ scaleX, transformOrigin: "left" }}
-        className="fixed top-0 left-0 right-0 h-[2px] z-[9999] bg-gradient-to-r from-indigo-500 via-cyan to-violet"
+        className="fixed top-0 left-0 right-0 h-[2px] z-[9999] bg-gradient-to-r from-indigo via-cyan to-violet"
       />
 
       <motion.nav
@@ -68,7 +68,7 @@ export default function Nav() {
               <li key={href}>
                 <a
                   href={href}
-                  className={`text-sm font-medium tracking-wide transition-colors relative group ${
+                  className={`font-heading text-sm font-medium tracking-wide transition-colors relative group ${
                     active === href.slice(1) ? "text-white" : "text-text-muted hover:text-white"
                   }`}
                 >
@@ -90,7 +90,7 @@ export default function Nav() {
               href="mailto:harishk0072@gmail.com"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo to-cyan text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-indigo/20"
+              className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo to-cyan text-white px-4 py-2 rounded-lg font-heading text-sm font-semibold shadow-lg shadow-indigo/20"
             >
               Hire Me
             </motion.a>
@@ -122,16 +122,16 @@ export default function Nav() {
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="text-text-muted hover:text-white text-base font-medium py-2 border-b border-border transition-colors"
+              className="font-heading text-text-muted hover:text-white text-base font-medium py-2 border-b border-border transition-colors"
             >
               {label}
             </a>
           ))}
           <a
             href="mailto:harishk0072@gmail.com"
-            className="text-indigo font-semibold py-2"
+            className="font-heading text-indigo font-semibold py-2"
           >
-            harishk0072@gmail.com
+            Hire Me
           </a>
         </div>
       </motion.div>

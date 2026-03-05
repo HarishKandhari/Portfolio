@@ -22,15 +22,6 @@ const socials = [
       </svg>
     ),
   },
-  {
-    label: "Phone",
-    href: "tel:6672603317",
-    icon: (
-      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
-    ),
-  },
 ];
 
 export default function Contact() {
@@ -49,7 +40,7 @@ export default function Contact() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12"
         >
-          <p className="text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Let&apos;s Connect</p>
+          <p className="font-heading text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Let&apos;s Connect</p>
           <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight">
             Let&apos;s Work Together
           </h2>
@@ -69,7 +60,7 @@ export default function Contact() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="bg-surface border border-border rounded-3xl p-10 backdrop-blur-sm relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(99,102,241,0.12),transparent_70%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(139,92,246,0.12),transparent_70%)] pointer-events-none" />
 
           <div className="relative z-10">
             <p className="text-text-muted text-base leading-relaxed mb-8">
@@ -77,12 +68,11 @@ export default function Contact() {
               or just connecting with fellow data enthusiasts.
             </p>
 
-            {/* Email as CTA button — address not shown publicly */}
             <motion.a
               href="mailto:harishk0072@gmail.com"
-              whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(99,102,241,0.45)" }}
+              whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(139,92,246,0.5)" }}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo to-cyan text-white px-8 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-indigo/25 mb-8 transition-shadow"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo to-cyan text-white px-8 py-3.5 rounded-xl font-heading font-semibold text-sm shadow-lg shadow-indigo/25 mb-8 transition-shadow"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -96,11 +86,11 @@ export default function Contact() {
                 <motion.a
                   key={s.label}
                   href={s.href}
-                  target={s.href.startsWith("http") ? "_blank" : undefined}
-                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  whileHover={{ scale: 1.05, borderColor: "rgba(99,102,241,0.4)", backgroundColor: "rgba(99,102,241,0.1)", color: "#a5b4fc" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, borderColor: "rgba(139,92,246,0.4)", backgroundColor: "rgba(139,92,246,0.1)", color: "#c4b5fd" }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/[0.04] border border-border rounded-xl text-text-muted text-sm font-medium transition-all"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/[0.04] border border-border rounded-xl font-heading text-text-muted text-sm font-medium transition-all"
                 >
                   {s.icon}
                   {s.label}
