@@ -135,10 +135,10 @@ export default function Hero() {
 
               {/* Name */}
               <motion.div {...fadeUp(0.1)} className="space-y-0">
-                <h1 className="font-heading font-bold leading-[0.95] tracking-[-0.03em]" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)" }}>
+                <h1 className="font-heading font-bold leading-[0.9] tracking-[-0.04em]" style={{ fontSize: "clamp(4.5rem, 13vw, 9rem)" }}>
                   Harish
                 </h1>
-                <h1 className="font-heading font-bold leading-[0.95] tracking-[-0.03em] gradient-text" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)" }}>
+                <h1 className="font-heading font-bold leading-[0.9] tracking-[-0.04em] gradient-text" style={{ fontSize: "clamp(4.5rem, 13vw, 9rem)" }}>
                   Kandhari
                 </h1>
               </motion.div>
@@ -167,7 +167,7 @@ export default function Hero() {
                   View My Work
                 </motion.a>
                 <motion.a
-                  href="mailto:harishk0072@gmail.com"
+                  href="#contact"
                   whileHover={{ scale: 1.04, borderColor: "rgba(255,255,255,0.2)" }}
                   whileTap={{ scale: 0.96 }}
                   className="inline-flex items-center gap-2 bg-transparent border border-border text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all"

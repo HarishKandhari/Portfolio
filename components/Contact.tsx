@@ -23,7 +23,7 @@ const socials = [
     ),
   },
   {
-    label: "+1 667-260-3317",
+    label: "Phone",
     href: "tel:6672603317",
     icon: (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -39,7 +39,7 @@ export default function Contact() {
       <span className="section-num">05</span>
 
       {/* Ambient glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-indigo/10 blur-[130px] pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
         <motion.div
@@ -50,7 +50,9 @@ export default function Contact() {
           className="mb-12"
         >
           <p className="text-indigo text-xs font-bold tracking-[0.14em] uppercase mb-3">Let&apos;s Connect</p>
-          <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight">Get In Touch</h2>
+          <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight">
+            Let&apos;s Work Together
+          </h2>
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 48 }}
@@ -67,7 +69,6 @@ export default function Contact() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="bg-surface border border-border rounded-3xl p-10 backdrop-blur-sm relative overflow-hidden"
         >
-          {/* Inner glow */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(99,102,241,0.12),transparent_70%)] pointer-events-none" />
 
           <div className="relative z-10">
@@ -76,12 +77,18 @@ export default function Contact() {
               or just connecting with fellow data enthusiasts.
             </p>
 
+            {/* Email as CTA button — address not shown publicly */}
             <motion.a
               href="mailto:harishk0072@gmail.com"
-              whileHover={{ color: "#6366f1", textShadow: "0 0 24px rgba(99,102,241,0.5)" }}
-              className="font-heading font-semibold text-2xl text-white block mb-8 transition-all"
+              whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(99,102,241,0.45)" }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo to-cyan text-white px-8 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-indigo/25 mb-8 transition-shadow"
             >
-              harishk0072@gmail.com
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Send Me an Email
             </motion.a>
 
             <div className="flex flex-wrap justify-center gap-3">

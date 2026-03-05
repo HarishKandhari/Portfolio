@@ -1,22 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SKILLS } from "@/lib/data";
 
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
-};
+const ROW1 = [
+  "Python", "SQL", "TypeScript", "R",
+  "TensorFlow", "PyTorch", "XGBoost", "LightGBM", "CatBoost", "BERT",
+  "OpenAI APIs", "LangChain", "LangGraph", "LangSmith", "Hugging Face",
+  "LoRA / QLoRA", "CrewAI", "AutoGen", "RAG", "Gemini", "Ollama",
+  "LangGraph Agents", "A2A Coordination", "Multi-Agent Pipelines",
+];
 
-const item = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
-};
+const ROW2 = [
+  "FAISS", "Pinecone", "ChromaDB", "Milvus",
+  "PySpark", "Kafka", "Snowflake", "BigQuery", "Redshift",
+  "MLflow", "Airflow", "Kubernetes", "Docker", "Terraform", "FastAPI",
+  "GitHub Actions", "Azure DevOps",
+  "AWS SageMaker", "AWS Bedrock", "Azure ML", "Azure OpenAI", "GCP Vertex AI",
+  "SHAP", "LIME", "RAGAS", "Tableau", "Power BI", "Plotly",
+];
+
+const CATEGORIES = [
+  { icon: "🐍", label: "Programming" },
+  { icon: "🤖", label: "ML & DL" },
+  { icon: "✨", label: "GenAI / LLMs" },
+  { icon: "🕸️", label: "AI Agents" },
+  { icon: "🗄️", label: "Vector DBs" },
+  { icon: "⚙️", label: "Data Eng." },
+  { icon: "🚀", label: "MLOps" },
+  { icon: "☁️", label: "Cloud" },
+  { icon: "📊", label: "Eval & Viz" },
+];
+
+function MarqueeRow({ items, reverse }: { items: string[]; reverse?: boolean }) {
+  const doubled = [...items, ...items];
+  return (
+    <div className="overflow-hidden w-full py-2">
+      <div className={`flex gap-3 w-max ${reverse ? "marquee-right" : "marquee-left"}`}>
+        {doubled.map((item, i) => (
+          <span
+            key={i}
+            className="whitespace-nowrap text-sm font-medium px-4 py-2 rounded-full border border-border bg-surface text-text-muted hover:border-indigo/40 hover:text-indigo-light hover:bg-indigo/10 transition-all cursor-default"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
   return (
     <section id="skills" className="relative py-28 overflow-hidden">
-      {/* Section number */}
       <span className="section-num">01</span>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -41,54 +76,44 @@ export default function Skills() {
           />
         </motion.div>
 
-        {/* Bento grid */}
+        {/* Category pills */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex flex-wrap gap-3 mb-12"
         >
-          {SKILLS.map((skill, i) => (
-            <motion.div
-              key={skill.category}
-              variants={item}
-              whileHover={{
-                scale: 1.02,
-                borderColor: "rgba(99,102,241,0.35)",
-                boxShadow: "0 8px 32px rgba(99,102,241,0.08)",
-              }}
-              className={`bg-surface border border-border rounded-2xl p-6 backdrop-blur-sm transition-colors group relative overflow-hidden ${
-                skill.span === 2 ? "sm:col-span-2 lg:col-span-2" : ""
-              }`}
+          {CATEGORIES.map((c) => (
+            <span
+              key={c.label}
+              className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-indigo/10 border border-indigo/20 text-indigo-light"
             >
-              {/* Subtle gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
-
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-9 h-9 flex items-center justify-center bg-indigo/10 rounded-xl text-lg">
-                    {skill.icon}
-                  </div>
-                  <h3 className="font-heading text-xs font-bold text-text-muted uppercase tracking-[0.08em]">
-                    {skill.category}
-                  </h3>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {skill.items.map((tag) => (
-                    <motion.span
-                      key={tag}
-                      whileHover={{ backgroundColor: "rgba(99,102,241,0.18)", borderColor: "rgba(99,102,241,0.4)", color: "#a5b4fc" }}
-                      className="inline-block bg-white/[0.04] border border-white/[0.07] text-text-muted text-[0.74rem] font-medium px-2.5 py-1 rounded-md transition-colors"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+              <span>{c.icon}</span>
+              {c.label}
+            </span>
           ))}
+        </motion.div>
+
+        {/* Marquee rows */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-3 -mx-6"
+        >
+          {/* Edge fades */}
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
+            <MarqueeRow items={ROW1} />
+          </div>
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
+            <MarqueeRow items={ROW2} reverse />
+          </div>
         </motion.div>
       </div>
     </section>
